@@ -1,4 +1,4 @@
 catenary
 ========
 
-play with catenary curves in order to learn about anchorin
+play with catenary curves in order to learn about anchoring
