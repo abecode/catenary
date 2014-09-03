@@ -1,9 +1,49 @@
 <html>
   <head>
     <title> Catenary </title>
+    <style>
+      
+      .chart div {
+      font: 10px sans-serif;
+      background-color: steelblue;
+      text-align: right;
+      padding: 3px;
+      margin: 1px;
+      color: white;
+      }
+
+    </style>
   </head>
   <body>
     <h1> Catenary </h1>
+    <svg width="4cm" height="4cm" viewBox="0 0 400 400"
+	 xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <title>Example triangle01- simple example of a 'path'</title>
+      <desc>A path that draws a triangle</desc>
+      <rect x="1" y="1" width="398" height="398"
+            fill="none" stroke="blue" />
+      <path d="M 100 100 L 300 100 L 200 300 z"
+            fill="red" stroke="blue" stroke-width="3" />
+    </svg>
+    <p> bbbbbbbbbbbbbbbbbbbbla bla blabla blabla bla bla bla </p>
+    <p> bbbbbbbbbbbbbbbbbbbbla bla blabla blabla bla bla bla </p>
+    <p> bbbbbbbbbbbbbbbbbbbbla bla blabla blabla bla bla bla </p>
+    <p> bbbbbbbbbbbbbbbbbbbbla bla blabla blabla bla bla bla </p>
+    
+    <div class="chart"/>
+
   </body>
   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+    var data = [4, 8, 15, 16, 23, 42];
+    var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 820]);
+    d3.select(".chart")
+    .selectAll("div")
+    .data(data)
+    .enter().append("div")
+    .style("width", function(d) { return x(d) + "px"; })
+    .text(function(d) { return d; });
+  </script>
 </html>
